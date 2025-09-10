@@ -1,0 +1,8 @@
+jinja2
+weasyprint
+pydantic
+PyYAML
+typer
+fastapi
+uvicorn
+pytest
