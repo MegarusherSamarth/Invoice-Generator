@@ -1,0 +1,7 @@
+settings:
+  composition_scheme_enabled: false
+  default_tax_rate: 18
+  default_cess_rate: 0
+  rounding_mode: "nearest" # Options: nearest, up, down
+  enable_e_invoice: false
+  default_currency: "INR"

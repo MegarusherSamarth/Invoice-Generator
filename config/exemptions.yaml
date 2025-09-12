@@ -1,0 +1,7 @@
+exemptions:
+  exempt:
+    - "9997" # Education services
+    - "3002" # Human blood and vaccines
+  nil_rated:
+    - "1001" # Wheat
+    - "1002" # Rye

@@ -1,0 +1,12 @@
+# GST rates by HSN/SAC code
+rates:
+  "1001": { rate: 5, cess: 0 } # Wheat
+  "2106": { rate: 18, cess: 0 } # Food preparations
+  "2710": { rate: 18, cess: 0 } # Petroleum oils
+  "8703": { rate: 28, cess: 15 } # Cars
+  "9983": { rate: 18, cess: 0 } # IT services
+  "9997": { rate: 0, cess: 0 } # Exempt services
+
+defaults:
+  rate: 18
+  cess: 0

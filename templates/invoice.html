@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: sans-serif;
+        font-size: 12px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 5px;
+        text-align: left;
+      }
+      .right {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Tax Invoice</h2>
+    <p>
+      <strong>Invoice No:</strong> {{ invoice.number }}<br />
+      <strong>Date:</strong> {{ invoice.date }}<br />
+      <strong>Place of Supply:</strong> {{ invoice.place_of_supply_state }}
+    </p>
+
+    <h3>Supplier</h3>
+    <p>
+      {{ invoice.supplier.legal_name }}<br />
+      GSTIN: {{ invoice.supplier.gstin }}<br />
+      {{ invoice.supplier.address }}
+    </p>
+
+    <h3>Customer</h3>
+    <p>
+      {{ invoice.customer.name }}<br />
+      {% if invoice.customer.gstin %}GSTIN: {{ invoice.customer.gstin }}<br />{%
+      endif %} {{ invoice.customer.address }}
+    </p>
+
+    <h3>Items</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>HSN/SAC</th>
+          <th>Qty</th>
+          <th>Unit Price</th>
+          <th>Taxable</th>
+          <th>CGST</th>
+          <th>SGST</th>
+          <th>IGST</th>
+          <th>Cess</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for line in breakdown.lines %}
+        <tr>
+          <td>{{ line.description }}</td>
+          <td>{{ line.hsn_sac }}</td>
+          <td class="right">{{ line.quantity }}</td>
+          <td class="right">{{ line.unit_price }}</td>
+          <td class="right">{{ line.taxable_value }}</td>
+          <td class="right">{{ line.cgst }}</td>
+          <td class="right">{{ line.sgst }}</td>
+          <td class="right">{{ line.igst }}</td>
+          <td class="right">{{ line.cess }}</td>
+          <td class="right">{{ line.total }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h3>Summary</h3>
+    <table>
+      <tr>
+        <td>Total Taxable Value</td>
+        <td class="right">{{ breakdown.total_taxable }}</td>
+      </tr>
+      <tr>
+        <td>CGST Total</td>
+        <td class="right">{{ breakdown.cgst_total }}</td>
+      </tr>
+      <tr>
+        <td>SGST Total</td>
+        <td class="right">{{ breakdown.sgst_total }}</td>
+      </tr>
+      <tr>
+        <td>IGST Total</td>
+        <td class="right">{{ breakdown.igst_total }}</td>
+      </tr>
+      <tr>
+        <td>Cess Total</td>
+        <td class="right">{{ breakdown.cess_total }}</td>
+      </tr>
+      <tr>
+        <td>Subtotal</td>
+        <td class="right">{{ breakdown.subtotal }}</td>
+      </tr>
+      <tr>
+        <td>Rounding Adjustment</td>
+        <td class="right">{{ breakdown.rounding_adjustment }}</td>
+      </tr>
+      <tr>
+        <td><strong>Grand Total</strong></td>
+        <td class="right"><strong>{{ breakdown.grand_total }}</strong></td>
+      </tr>
+    </table>
+
+    {% if invoice.supplier.composition %}
+    <p>
+      <em
+        >Note: Composition taxable person, not eligible to collect tax on
+        supplies.</em
+      >
+    </p>
+    {% endif %}
+  </body>
+</html>

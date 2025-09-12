@@ -1,0 +1,12 @@
+states:
+  "01": { name: "Jammu & Kashmir", is_ut: false }
+  "02": { name: "Himachal Pradesh", is_ut: false }
+  "23": { name: "Madhya Pradesh", is_ut: false }
+  "27": { name: "Maharashtra", is_ut: false }
+  "29": { name: "Karnataka", is_ut: false }
+  "33": { name: "Tamil Nadu", is_ut: false }
+  "35": { name: "Andaman & Nicobar Islands", is_ut: true }
+  "36": { name: "Telangana", is_ut: false }
+
+rules:
+  inter_state_logic: "supplier_state != place_of_supply_state"
