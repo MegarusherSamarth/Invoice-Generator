@@ -1,0 +1,68 @@
+{
+  "invoice": {
+    "number": "INV-001",
+    "date": "2025-09-12",
+    "supplier": {
+      "gstin": "27ABCDE1234F1Z5",
+      "legal_name": "MEGARUSHER Technologies",
+      "trade_name": null,
+      "address": "Mumbai, Maharashtra",
+      "state_code": "27",
+      "composition": false,
+      "e_invoice_enabled": false,
+      "logo_url": null
+    },
+    "customer": {
+      "name": "ClientCorp",
+      "gstin": "29XYZAB1234C1Z2",
+      "address": "Bangalore, Karnataka",
+      "state_code": "29",
+      "reverse_charge_applicable": false
+    },
+    "place_of_supply_state": "29",
+    "items": [
+      {
+        "description": "Software License",
+        "hsn_sac": "997331",
+        "quantity": "1",
+        "unit_price": "10000",
+        "tax_rate": "18",
+        "cess_rate": "0",
+        "discount_pre_tax": "0",
+        "discount_post_tax": "0",
+        "is_exempt": false
+      }
+    ],
+    "freight": "0",
+    "insurance": "0",
+    "other_charges": "0",
+    "notes": null,
+    "rounding": "nearest",
+    "po_reference": null,
+    "payment_terms": null
+  },
+  "tax_breakdown": {
+    "lines": [
+      {
+        "description": "Software License",
+        "hsn_sac": "997331",
+        "quantity": "1",
+        "unit_price": "10000",
+        "taxable_value": "10000.00",
+        "cgst": "0",
+        "sgst": "0",
+        "igst": "1800.00",
+        "cess": "0.00",
+        "total": "11800.00"
+      }
+    ],
+    "total_taxable": "10000.00",
+    "cgst_total": "0.00",
+    "sgst_total": "0.00",
+    "igst_total": "1800.00",
+    "cess_total": "0.00",
+    "subtotal": "11800.00",
+    "rounding_adjustment": "0.00",
+    "grand_total": "11800"
+  }
+}

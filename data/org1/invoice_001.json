@@ -1,0 +1,28 @@
+{
+  "number": "INV-001",
+  "date": "2025-09-12",
+  "supplier": {
+    "gstin": "27ABCDE1234F1Z5",
+    "legal_name": "MEGARUSHER Technologies",
+    "address": "Mumbai, Maharashtra",
+    "state_code": "27",
+    "composition": false
+  },
+  "customer": {
+    "name": "ClientCorp",
+    "gstin": "29XYZAB1234C1Z2",
+    "address": "Bangalore, Karnataka",
+    "state_code": "29"
+  },
+  "place_of_supply_state": "29",
+  "items": [
+    {
+      "description": "Software License",
+      "hsn_sac": "997331",
+      "quantity": 1,
+      "unit_price": 10000,
+      "tax_rate": 18,
+      "is_exempt": false
+    }
+  ]
+}
